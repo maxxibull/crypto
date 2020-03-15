@@ -11,7 +11,7 @@ int * generate_glibc(int seed) {
   r[0] = seed;
   results[0] = r[0];
 
-  for (i = 1; i < MAX; i++) {
+  for (i = 1; i < 31; i++) {
     r[i] = (16807LL * r[i - 1]) % 2147483647;
     if (r[i] < 0) {
       r[i] += 2147483647;
@@ -40,9 +40,9 @@ int * generate_glibc(int seed) {
 int main() {
     srand(1);
     int * r = generate_glibc(1);
-    for (int i = 344; i < MAX; i++) {
+    for (int i = 344; i < 400; i++) {
         printf("%d:\n", i);
-        printf("%d\n", rand());
+        printf("%ld\n", random());
         printf("%d\n\n", r[i]);
     }
 }
