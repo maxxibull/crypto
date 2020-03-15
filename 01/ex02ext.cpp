@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <bitset>
+using namespace std;
 
 const int MAX = 100;
 int random_array[MAX];
@@ -25,10 +26,10 @@ int main() {
     for (; index < MAX; index++) {
         expected = rand();
         predicted = predict(index);
-        std::bitset<32> bits(expected ^ ~predicted);
+        bitset<32> bits(expected ^ ~predicted);
         correct_counter += bits.count();
         success = (float) correct_counter / (float)((index + 1) * 32);
-        std::cout << success << std::endl;
+        cout << success << endl;
 
         if (predicted != expected) {
             random_array[index] = expected % 2147483648;
