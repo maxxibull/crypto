@@ -1,0 +1,2 @@
+pyjks==19.0.0
+pycrypto==2.6.1
